@@ -6,7 +6,7 @@
   </a>
 </p>
 
-## Screenshot
+## Screenshots
 
 ![FetchAPI](public/fetchapi.png)
 ![Axios](public/axios.png)
