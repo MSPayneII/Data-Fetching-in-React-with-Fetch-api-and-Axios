@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import PostsWithFetch from "./PostsWithFetch";
+import PostsWithAxios from "./PostsWithAxios";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home (Default with Fetch API Example) </Link>
+            </li>
+            <li>
+              <Link to="/axios">Click Here - Posts with Axios Example</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/fetchapi" element={<PostsWithFetch />}></Route>
+          <Route path="/axios" element={<PostsWithAxios />}></Route>
+          <Route path="/" element={<PostsWithFetch />}></Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
